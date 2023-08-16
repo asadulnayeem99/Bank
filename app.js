@@ -6,6 +6,7 @@ button.addEventListener("click", function () {
   const transaction = document.getElementById("transaction-area");
   transaction.style.display = "block";
 });
+
 //deposit
 
 const depositbtn = document.getElementById("deposit-btn");
@@ -13,7 +14,10 @@ depositbtn.addEventListener("click", function () {
   const depositAmount = document.getElementById("deposit").value;
   const depositNum = parseFloat(depositAmount);
   UpdateSpanText("current-depo", depositNum);
+  UpdateSpanText("current-balance",depositNum);
 });
+
+//function 
 function UpdateSpanText(id, num) {
   const CurrDepo = document.getElementById(id).innerText;
   const CurDepF = parseFloat(CurrDepo);
