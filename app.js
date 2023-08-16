@@ -12,9 +12,11 @@ const depositbtn = document.getElementById("deposit-btn");
 depositbtn.addEventListener("click", function () {
   const depositAmount = document.getElementById("deposit").value;
   const depositNum = parseFloat(depositAmount);
-  const CurrDepo = document.getElementById("current-depo").innerText;
-  const CurDepF = parseFloat(CurrDepo);
-  const totalDepo = depositNum + CurDepF;
-  console.log(totalDepo);
-  document.getElementById("current-depo").innerText = totalDepo;
+  UpdateSpanText("current-depo", depositNum);
 });
+function UpdateSpanText(id, num) {
+  const CurrDepo = document.getElementById(id).innerText;
+  const CurDepF = parseFloat(CurrDepo);
+  const totalDepo = num + CurDepF;
+  document.getElementById(id).innerText = totalDepo;
+}
